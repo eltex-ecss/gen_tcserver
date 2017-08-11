@@ -1,0 +1,11 @@
+language: erlang
+before_install:
+    - wget https://github.com/rebar/rebar/releases/download/2.6.1/rebar
+    - chmod +x rebar
+script: "./rebar -V && make travis"
+otp_release:
+    - 17.5
+    - 18.0
+    - 19.3
+notifications:
+  email: false

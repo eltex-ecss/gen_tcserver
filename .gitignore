@@ -1,0 +1,8 @@
+tags
+.tags
+*.beam
+*.dump
+*.app
+.rebar
+.eunit
+deps
