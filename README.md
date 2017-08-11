@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/eltex-ecss/timer_server.svg?branch=master)](https://travis-ci.org/eltex-ecss/timer_server)
+[![Build Status](https://travis-ci.org/eltex-ecss/gen_tcserver.svg?branch=master)](https://travis-ci.org/eltex-ecss/gen_tcserver)
 
 **Тестовая версия**
 
@@ -48,7 +48,7 @@ gen_tcserver это behaviour, который реализован на осно
 ```erlang
 TID :: term()                            = Уникальное имя таймера
 Duration :: non_neg_integer()            = Время жизни таймера
-Args :: [{Key :: term(), Val :: term()}] = Данные устонавливаемые при инициализации хранилища таймерво
+Args :: [{Key :: term(), Val :: term()}] = Данные устонавливаемые при инициализации хранилища таймеров
 Arg  :: term()                           = Данные получаемые по истечению таймера
 Time1 :: non_neg_integer()               = Время старта
 Time2 :: non_neg_integer()               = Время срабатывания
