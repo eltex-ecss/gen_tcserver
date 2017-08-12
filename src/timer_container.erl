@@ -140,7 +140,8 @@ init(_) ->
     #timer_container{t_containers = []}.
 %%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
--spec init(TC :: timer_container(), Args :: [{Key :: term(), Val :: term()}]) -> timer_container().
+-type timer_option() :: non_blocking.
+-spec init(TC :: timer_container(), Args :: [timer_option()]) -> timer_container().
 %%--------------------------------------------------------------------
 %% @doc Init timer containers
 %%--------------------------------------------------------------------
@@ -267,11 +268,11 @@ cont_start_timer_local(NowTime, TCID, TID, Duration, Arg, Cont) ->
     NowTime :: non_neg_integer(),
     TCID :: term(),
     TID :: term(),
-    TType :: local | global,
+    TType :: timer_type(),
     Duration :: non_neg_integer(),
     Args :: [{Key :: term(), Val :: term()}],
     Cont :: timer_container()
-) -> timer_container().
+) -> timer_container() | no_return().
 %%--------------------------------------------------------------------
 %% @doc start global or local timer in specified t_container
 %%--------------------------------------------------------------------
@@ -493,7 +494,7 @@ filter_timers(TCID, FTID, #timer_container{t_containers = TCont} = Cont) ->
 -spec get_timer_info(
     TID :: term(),
     Cont :: timer_container()
-) -> undefined | {Time :: non_neg_integer(), Args :: term(), Type :: local | global}.
+) -> undefined | {Time :: non_neg_integer(), Args :: term(), Type :: timer_type()}.
 %%--------------------------------------------------------------------
 %% @doc Get timer information
 %%--------------------------------------------------------------------
@@ -505,7 +506,7 @@ get_timer_info(TID, Cont) ->
     TCID :: term(),
     TID :: term(),
     Cont :: timer_container()
-) -> undefined | {Time :: non_neg_integer(), Args :: term(), Type :: local | global}.
+) -> undefined | {Time :: non_neg_integer(), Args :: term(), Type :: timer_type()}.
 %%--------------------------------------------------------------------
 %% @doc Get specific timer information
 %%--------------------------------------------------------------------
