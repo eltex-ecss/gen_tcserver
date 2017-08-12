@@ -265,7 +265,7 @@ get_timeout(TO, TC, #timer_state{ref = TRef}) ->
     end.
 
 try_handle_timeout_and_return(#s{module = Module, mstate = MState, tcontainer = TS,
-    no_hibernate_timeout = TO, hibernate_timer_ref = #timer_state{} = TRef} = State) ->
+        no_hibernate_timeout = TO, hibernate_timer_ref = #timer_state{} = TRef} = State) ->
     case timer_container:process_timeout(TS) of
         {none, NTS} ->
             {T, NewTRef} = get_timeout(TO, NTS, TRef),
