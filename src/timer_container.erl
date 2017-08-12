@@ -140,7 +140,8 @@ init(_) ->
     #timer_container{t_containers = []}.
 %%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
--spec init(TC :: timer_container(), Args :: [{Key :: term(), Val :: term()}]) -> timer_container().
+-type timer_option() :: non_blocking.
+-spec init(TC :: timer_container(), Args :: [timer_option()]) -> timer_container().
 %%--------------------------------------------------------------------
 %% @doc Init timer containers
 %%--------------------------------------------------------------------
