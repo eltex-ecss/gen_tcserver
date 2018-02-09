@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/eltex-ecss/gen_tcserver.svg?branch=master)](https://travis-ci.org/eltex-ecss/gen_tcserver)
-
-**Тестовая версия**
+<p align="center">
+<img src="https://raw.githubusercontent.com/eltex-ecss/gen_tcserver/master/doc/gen_tcserver.jpg"/>
+</p>
 
 ## Overview
 gen_tcserver это behaviour, который реализован на основе gen server-a. Он расширяет возможности gen server-а, добавляя возможность работы с таймерами и соответствующи на них реагировать.
